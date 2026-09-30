@@ -1,4 +1,4 @@
-// Carl Owen Belen · portfolio. Small, dependency-free.
+// Owén · portfolio. Small, dependency-free.
 (() => {
   document.documentElement.classList.remove("no-js");
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -6,32 +6,27 @@
   // Year in the footer
   document.getElementById("yr").textContent = new Date().getFullYear();
 
-  // Nav: border on scroll, mobile menu, active link
+  // Nav: background once scrolled, highlight the section in view
   const nav = document.querySelector(".nav");
-  const menu = document.querySelector(".menu");
-  const onScroll = () => nav.classList.toggle("scrolled", window.scrollY > 8);
+  const onScroll = () => nav.classList.toggle("scrolled", window.scrollY > 10);
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
-  menu.addEventListener("click", () => {
-    const open = nav.classList.toggle("open");
-    menu.setAttribute("aria-expanded", String(open));
-  });
-  document.querySelectorAll(".links a").forEach((a) =>
-    a.addEventListener("click", () => {
-      nav.classList.remove("open");
-      menu.setAttribute("aria-expanded", "false");
-    })
-  );
-  const links = [...document.querySelectorAll(".links a")];
-  const spy = new IntersectionObserver(
-    (entries) =>
-      entries.forEach((e) => {
-        if (!e.isIntersecting) return;
-        links.forEach((l) => l.classList.toggle("on", l.getAttribute("href") === "#" + e.target.id));
-      }),
-    { rootMargin: "-45% 0px -50% 0px" }
-  );
-  ["work", "build", "about", "contact"].forEach((id) => spy.observe(document.getElementById(id)));
+
+  const links = [...document.querySelectorAll(".pills a")];
+  if ("IntersectionObserver" in window) {
+    // section id -> nav link it belongs to ("How I build" sits under Work, "Tech stack" under About)
+    const owner = { hero: "", work: "work", build: "work", about: "about", stack: "about", contact: "contact" };
+    const spy = new IntersectionObserver(
+      (entries) =>
+        entries.forEach((e) => {
+          if (!e.isIntersecting) return;
+          const target = "#" + owner[e.target.id];
+          links.forEach((l) => l.classList.toggle("on", l.getAttribute("href") === target));
+        }),
+      { rootMargin: "-45% 0px -50% 0px" }
+    );
+    Object.keys(owner).forEach((id) => spy.observe(document.getElementById(id)));
+  }
 
   // Reveal on scroll
   const items = document.querySelectorAll(".reveal");
@@ -64,15 +59,13 @@
   const term = document.getElementById("term");
   const esc = (s) => s.replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
   const render = (upto) => {
-    // upto = total characters to show across all lines
     let left = upto, out = "";
     for (const line of lines) {
       if (left <= 0) break;
       for (let i = 0; i < line.length; i += 2) {
-        const cls = line[i], txt = line[i + 1];
-        const part = txt.slice(0, Math.max(0, left));
-        left -= txt.length;
-        if (part) out += `<span class="${cls}">${esc(part)}</span>`;
+        const part = line[i + 1].slice(0, Math.max(0, left));
+        left -= line[i + 1].length;
+        if (part) out += `<span class="${line[i]}">${esc(part)}</span>`;
         if (left <= 0) break;
       }
       if (left > 0) out += "\n";
@@ -83,19 +76,21 @@
   if (reduce) {
     render(total);
   } else {
-    let shown = 0;
+    let shown = 0, started = false;
     const cmdLen = lines[0][1].length + lines[0][3].length;
     const tick = () => {
       shown++;
       render(shown);
       if (shown >= total) {
-        setTimeout(() => { shown = 0; tick(); }, 4200);
+        setTimeout(() => { shown = 0; tick(); }, 4500);
         return;
       }
-      // type the command letter by letter, then print each result line faster
       setTimeout(tick, shown < cmdLen ? 55 : 14);
     };
-    setTimeout(tick, 600);
+    // start typing when the terminal scrolls into view
+    new IntersectionObserver(([e], obs) => {
+      if (e.isIntersecting && !started) { started = true; obs.disconnect(); setTimeout(tick, 300); }
+    }, { threshold: .35 }).observe(term);
   }
 
   // Copy email

@@ -3,39 +3,31 @@
 <head>
 <meta charset="utf-8">
 <title>OG Image</title>
-<!-- Source for assets/og.png (1200 x 630). Render with Edge headless, see design/README.txt -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&family=JetBrains+Mono:wght@500&family=Montserrat:wght@800&display=swap" rel="stylesheet">
+<!-- Source for assets/og.png (1200 x 630). Rendered with Edge headless. -->
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;700&display=swap" rel="stylesheet">
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { width: 1200px; height: 630px; overflow: hidden; }
-  body { background: #0a0c10; color: #e9edf4; font-family: Inter, sans-serif; position: relative; }
-  .grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px); background-size: 56px 56px; -webkit-mask-image: radial-gradient(ellipse 80% 80% at 60% 40%, #000 25%, transparent 75%); }
-  .g1 { position: absolute; width: 760px; height: 760px; right: -240px; top: -300px; background: radial-gradient(circle, rgba(110,168,255,.22), transparent 62%); }
-  .g2 { position: absolute; width: 600px; height: 600px; left: -240px; bottom: -300px; background: radial-gradient(circle, rgba(167,139,250,.16), transparent 62%); }
-  .photo { position: absolute; right: 80px; top: 120px; width: 300px; height: 300px; border-radius: 30px; overflow: hidden; box-shadow: 0 30px 70px -20px rgba(0,0,0,.9); }
-  .photo img { width: 100%; height: 100%; object-fit: cover; }
-  .frame { position: absolute; right: 94px; top: 106px; width: 300px; height: 300px; border-radius: 32px; border: 1.5px solid rgba(110,168,255,.45); }
-  .t { position: absolute; left: 80px; top: 96px; width: 660px; }
-  .brand { display: flex; align-items: center; gap: 14px; font: 600 22px Inter; }
-  .brand svg { width: 44px; height: 44px; }
-  .eyebrow { margin-top: 44px; font: 500 18px "JetBrains Mono", monospace; letter-spacing: .12em; color: #6ea8ff; }
-  h1 { margin-top: 16px; font: 800 58px/1.08 Montserrat, sans-serif; letter-spacing: -.02em; }
-  h1 span { background: linear-gradient(100deg, #6ea8ff, #a78bfa); -webkit-background-clip: text; color: transparent; }
-  .chips { position: absolute; left: 80px; bottom: 70px; display: flex; gap: 10px; }
-  .chips i { font: 500 17px "JetBrains Mono", monospace; font-style: normal; padding: 7px 14px; border-radius: 10px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12); color: #c9d4e6; }
-  .url { position: absolute; right: 80px; bottom: 76px; font: 600 20px Inter; color: #9aa5b5; }
+  body { background: #161616; color: #f4f4f2; font-family: "Helvetica Neue", "Inter Tight", Arial, sans-serif; position: relative; }
+  .glow { position: absolute; inset: 0; background: radial-gradient(55% 60% at 38% 45%, rgba(255,255,255,.06), transparent 70%); }
+  .t { position: absolute; left: 84px; top: 92px; }
+  .avail { display: inline-flex; align-items: center; gap: 12px; font-size: 22px; color: #a1a1a0; padding: 10px 20px 10px 16px; border-radius: 999px; border: 1px solid rgba(255,255,255,.1); }
+  .avail i { width: 11px; height: 11px; border-radius: 50%; background: #3ddc84; }
+  h1 { margin-top: 38px; font-weight: 700; font-size: 104px; line-height: .95; letter-spacing: -.045em; }
+  h1 svg { width: 28px; height: 28px; fill: #f4f4f2; vertical-align: 64px; margin-left: 4px; }
+  .photo { position: absolute; right: 84px; top: 150px; width: 300px; height: 300px; border-radius: 34px; overflow: hidden; }
+  .photo img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.92); }
+  .url { position: absolute; left: 84px; bottom: 70px; font-size: 24px; font-weight: 500; color: #a1a1a0; }
+  .url b { color: #f4f4f2; }
 </style>
 </head>
 <body>
-  <div class="grid"></div><div class="g1"></div><div class="g2"></div>
+  <div class="glow"></div>
   <div class="t">
-    <div class="brand"><svg viewBox="0 0 32 32"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6ea8ff"/><stop offset="1" stop-color="#a78bfa"/></linearGradient></defs><rect width="32" height="32" rx="9" fill="url(#g)"/><circle cx="14" cy="16.5" r="6.2" fill="none" stroke="#0a0c10" stroke-width="3"/><circle cx="23.2" cy="21.6" r="2.1" fill="#0a0c10"/></svg>Carl Owen E. Belen</div>
-    <div class="eyebrow">AI ENGINEER · PHILIPPINES</div>
-    <h1>I build AI tools that turn <span>slow, manual work</span> into fast workflows.</h1>
+    <div class="avail"><i></i>Available for work · Philippines</div>
+    <h1>Hi. I'm Owén.<svg viewBox="0 0 24 24"><path d="M12 0c.6 5.6 6.4 11.4 12 12-5.6.6-11.4 6.4-12 12-.6-5.6-6.4-11.4-12-12C5.6 11.4 11.4 5.6 12 0z"/></svg><br>An AI Engineer.</h1>
   </div>
-  <div class="frame"></div>
   <div class="photo"><img src="../assets/photo.jpg" alt=""></div>
-  <div class="chips"><i>Claude Code</i><i>MCP</i><i>AI Agents</i><i>Python</i></div>
-  <div class="url">carlowenbelen.github.io</div>
+  <div class="url"><b>carlowenbelen.github.io</b> &nbsp;·&nbsp; Carl Owen E. Belen</div>
 </body>
 </html>
