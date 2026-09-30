@@ -28,15 +28,6 @@
     Object.keys(owner).forEach((id) => spy.observe(document.getElementById(id)));
   }
 
-  // Scroll progress line under the header
-  const bar = document.querySelector(".progress");
-  const onProgress = () => {
-    const max = document.documentElement.scrollHeight - window.innerHeight;
-    bar.style.transform = `scaleX(${max > 0 ? Math.min(1, window.scrollY / max) : 0})`;
-  };
-  window.addEventListener("scroll", onProgress, { passive: true });
-  onProgress();
-
   // Marquee: repeat each row once so the loop is seamless
   document.querySelectorAll(".track[data-dup]").forEach((t) => {
     [...t.children].forEach((c) => {
