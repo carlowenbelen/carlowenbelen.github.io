@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carl Owen Belen · AI Engineer</title>
+<meta name="description" content="Carl Owen E. Belen is an AI Engineer and IT educator from the Philippines who builds AI tools, agents and automations with Claude Code, MCP and local AI models.">
+<meta name="theme-color" content="#0a0c10">
+<link rel="canonical" href="https://carlowenbelen.github.io/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Carl Owen Belen · AI Engineer">
+<meta property="og:description" content="I build AI tools, agents and automations that turn slow, manual work into fast, reliable workflows.">
+<meta property="og:url" content="https://carlowenbelen.github.io/">
+<meta property="og:image" content="https://carlowenbelen.github.io/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Carl Owen E. Belen",
+  "jobTitle": "AI Engineer",
+  "url": "https://carlowenbelen.github.io/",
+  "image": "https://carlowenbelen.github.io/assets/photo.jpg",
+  "address": { "@type": "PostalAddress", "addressRegion": "Pangasinan", "addressCountry": "PH" },
+  "sameAs": ["https://github.com/carlowenbelen"],
+  "knowsAbout": ["AI Engineering", "AI Agents", "Claude Code", "Model Context Protocol", "Python", "Workflow Automation", "Cybersecurity"]
+}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#work">Skip to content</a>
+
+<header class="nav" id="top">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="Carl Owen Belen, home">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="bm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6ea8ff"/><stop offset="1" stop-color="#a78bfa"/></linearGradient></defs><rect width="32" height="32" rx="9" fill="url(#bm)"/><circle cx="14" cy="16.5" r="6.2" fill="none" stroke="#0a0c10" stroke-width="3"/><circle cx="23.2" cy="21.6" r="2.1" fill="#0a0c10"/></svg>
+      <span>Owen Belen</span>
+    </a>
+    <nav class="links" aria-label="Main">
+      <a href="#work">Work</a>
+      <a href="#build">How I build</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="status" href="#contact"><span class="pulse" aria-hidden="true"></span>Available for work</a>
+    <button class="menu" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="wrap hero-in">
+    <div class="hero-text reveal">
+      <p class="eyebrow">Carl Owen E. Belen · AI Engineer</p>
+      <h1>I build AI tools that turn <span class="grad">slow, manual work</span> into fast workflows.</h1>
+      <p class="lead">AI Engineer and IT college instructor from Pangasinan, Philippines. I build with Claude Code, MCP and local AI models. Claude plans the work, and my own machine does the heavy lifting.</p>
+      <div class="cta">
+        <a class="btn primary" href="#work">See my work</a>
+        <a class="btn ghost" href="https://github.com/carlowenbelen" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+        <a class="btn ghost" href="#contact">Contact</a>
+      </div>
+    </div>
+
+    <div class="term reveal" aria-label="Example run of my AI video editing pipeline">
+      <div class="term-bar"><i></i><i></i><i></i><span>ve · ai video editor</span></div>
+      <pre class="term-body"><code id="term"></code><span class="caret" aria-hidden="true"></span></pre>
+      <noscript><pre class="term-body"><code>$ ve make interview.mp4 --vertical
+✓ transcribe  faster-whisper large-v3 · GPU
+✓ rough cut   fillers, stutters, retakes removed
+✓ audio       -14 LUFS · true peak -1.4 dBTP
+✓ graphics    HyperFrames overlays · captions
+✓ render      16:9 + 9:16 · QC passed</code></pre></noscript>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <ul class="stats reveal">
+      <li><b>31</b><span>PDF tools in one offline app</span></li>
+      <li><b>~60s</b><span>to rough-cut a 3-minute video</span></li>
+      <li><b>10</b><span>motion-graphic templates in my video pipeline</span></li>
+      <li><b>5</b><span>tools I added to an open-source MCP server</span></li>
+      <li><b>40%</b><span>less lesson prep time with AI</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- WORK -->
+<section class="section" id="work">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="eyebrow">Selected work</p>
+      <h2>Things I've built</h2>
+      <p class="sub">AI tools, agents and automations, plus a few data tools. Each one solves a real, slow problem.</p>
+    </div>
+
+    <!-- Featured -->
+    <article class="feature reveal">
+      <div class="feature-text">
+        <p class="kicker">Flagship · AI media pipeline</p>
+        <h3>AI Video Editing Pipeline</h3>
+        <p>One command turns raw footage into a finished YouTube video or Short. Whisper transcribes on the GPU. A rough-cut engine removes fillers, stutters and retakes, then the pipeline adds motion graphics, captions, sound effects and music ducking, and masters the audio to -14 LUFS. It can also reframe the video to 9:16 around the speaker's face.</p>
+        <p>Claude plans the edit and the laptop does the rendering, so each video costs very few AI credits.</p>
+        <ul class="chips"><li>Python</li><li>faster-whisper</li><li>FFmpeg</li><li>HyperFrames</li><li>GSAP</li><li>OpenCV</li><li>Claude Code skill</li></ul>
+        <p class="soon">Public repo coming soon</p>
+      </div>
+      <div class="editor" aria-hidden="true">
+        <div class="ed-screen">
+          <div class="ed-third"><b>Carl Owen Belen</b><span>AI Engineer</span></div>
+          <div class="ed-cap">and that's how the <em>whole edit</em> runs itself</div>
+        </div>
+        <div class="ed-tracks">
+          <div class="trk"><label>V</label><div class="lane"><i style="left:0;width:21%"></i><i style="left:23%;width:30%"></i><i style="left:55%;width:17%"></i><i style="left:74%;width:26%"></i></div></div>
+          <div class="trk"><label>FX</label><div class="lane fx"><i style="left:4%;width:12%"></i><i style="left:40%;width:10%"></i><i style="left:78%;width:14%"></i></div></div>
+          <div class="trk"><label>CC</label><div class="lane cc"><i style="left:1%;width:9%"></i><i style="left:12%;width:8%"></i><i style="left:24%;width:11%"></i><i style="left:38%;width:9%"></i><i style="left:50%;width:10%"></i><i style="left:63%;width:8%"></i><i style="left:74%;width:12%"></i><i style="left:88%;width:10%"></i></div></div>
+          <div class="trk"><label>A</label><div class="lane wave"></div></div>
+          <div class="playhead"></div>
+        </div>
+      </div>
+    </article>
+
+    <div class="grid">
+      <article class="card reveal">
+        <p class="kicker">Multi-agent · Open source</p>
+        <h3>Swarm AI</h3>
+        <p>Five Claude agents with different personas analyze one hard question in parallel. A synthesizer agent then writes the consensus with an agreement score.</p>
+        <ul class="chips"><li>Python</li><li>Anthropic API</li><li>asyncio</li></ul>
+        <a class="more" href="https://github.com/carlowenbelen/swarm-ai" target="_blank" rel="noopener">View on GitHub ↗</a>
+      </article>
+
+      <article class="card reveal">
+        <p class="kicker">AI + security · Open source</p>
+        <h3>CVE Watchlist</h3>
+        <p>A daily AI security briefing. It pulls new CVEs from the NIST database, keeps only the ones that hit your tech stack, and has Claude explain them in plain English, with fixes.</p>
+        <ul class="chips"><li>Python</li><li>NVD API</li><li>Claude</li></ul>
+        <a class="more" href="https://github.com/carlowenbelen/cve-watchlist" target="_blank" rel="noopener">View on GitHub ↗</a>
+      </article>
+
+      <article class="card reveal">
+        <p class="kicker">MCP · Open-source upgrade</p>
+        <h3>TradingView MCP Upgrade</h3>
+        <p>I upgraded Moon Dev's open-source MCP server that lets Claude write, compile-check and chart Pine Script. I added 5 tools, including self-healing browser controls, and rewrote the backtest reader after TradingView changed its layout.</p>
+        <ul class="chips"><li>Python</li><li>Model Context Protocol</li><li>Chrome DevTools Protocol</li></ul>
+      </article>
+
+      <article class="card reveal">
+        <p class="kicker">Desktop app · Privacy first</p>
+        <h3>Offline PDF Toolkit</h3>
+        <p>31 PDF tools in one desktop app: merge, split, compress, OCR, convert, sign, redact and compare. It runs fully offline, so private files never leave the computer.</p>
+        <ul class="chips"><li>Python</li><li>PyMuPDF</li><li>RapidOCR</li><li>Ghostscript</li></ul>
+      </article>
+
+      <article class="card reveal">
+        <p class="kicker">Local AI · Media</p>
+        <h3>Media Studio &amp; AI Photo Enhancer</h3>
+        <p>Speech-to-text transcripts and frame extraction for video research, plus local AI photo upscaling and face restoration tuned to keep faces looking natural.</p>
+        <ul class="chips"><li>Whisper</li><li>Real-ESRGAN</li><li>GFPGAN</li><li>PyTorch</li></ul>
+      </article>
+
+      <article class="card reveal">
+        <p class="kicker">Chrome extension · Education</p>
+        <h3>Question Form Automator</h3>
+        <p>Fills quiz questions from text files into the school LMS and Google Forms in seconds, so teachers never have to type them in by hand.</p>
+        <ul class="chips"><li>JavaScript</li><li>Chrome MV3</li><li>Content scripts</li></ul>
+      </article>
+
+      <article class="card reveal">
+        <p class="kicker">Content automation</p>
+        <h3>Faceless YouTube Automation</h3>
+        <p>Claude Code writes original stories. Free text-to-speech narrates them with synced captions, and FFmpeg builds 8 to 25 minute compilations on a daily schedule.</p>
+        <ul class="chips"><li>Claude Code</li><li>edge-tts</li><li>FFmpeg</li></ul>
+      </article>
+
+      <article class="card reveal">
+        <p class="kicker">Algorithmic trading</p>
+        <h3>Trading Systems</h3>
+        <p>MetaTrader 5 Expert Advisors for gold, indices and crypto, with breakout entries, ATR-based stops, position sizing and tick-data backtesting.</p>
+        <ul class="chips"><li>MQL5</li><li>Python</li><li>Pine Script</li></ul>
+      </article>
+
+      <article class="card reveal">
+        <p class="kicker">Data tools · Open source</p>
+        <h3>Quant Toolkit</h3>
+        <p>Three small tools with HTML reports: a Monte Carlo stress test for strategies, a Markowitz portfolio optimizer, and a Bayesian A/B test calculator.</p>
+        <ul class="chips"><li>NumPy</li><li>SciPy</li><li>pandas</li></ul>
+        <div class="more-row">
+          <a class="more" href="https://github.com/carlowenbelen/trading-strategy-monte-carlo" target="_blank" rel="noopener">Monte Carlo ↗</a>
+          <a class="more" href="https://github.com/carlowenbelen/portfolio-optimizer" target="_blank" rel="noopener">Optimizer ↗</a>
+          <a class="more" href="https://github.com/carlowenbelen/bayesian-ab-calculator" target="_blank" rel="noopener">A/B ↗</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- HOW I BUILD -->
+<section class="section alt" id="build">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="eyebrow">How I build</p>
+      <h2>Claude Code, set up like a small team</h2>
+      <p class="sub">My rule: <strong>Claude plans, the machine does the heavy work.</strong> That keeps my tools fast, private and cheap to run.</p>
+    </div>
+    <ol class="steps">
+      <li class="reveal"><span>01</span><h3>Custom skills</h3><p>Reusable skills for jobs I repeat. For example, an <code>/edit-video</code> skill runs the whole editing pipeline with very few credits.</p></li>
+      <li class="reveal"><span>02</span><h3>MCP tools &amp; connectors</h3><p>Claude works with real tools: market data, live charts, the browser, Google Drive and Canva.</p></li>
+      <li class="reveal"><span>03</span><h3>Project memory</h3><p><code>CLAUDE.md</code> files and a memory store, so every session starts with the full context.</p></li>
+      <li class="reveal"><span>04</span><h3>Local heavy lifting</h3><p>Whisper on the GPU, FFmpeg with NVENC and local AI models all run offline.</p></li>
+      <li class="reveal"><span>05</span><h3>Automatic checks</h3><p>Before anything counts as done, scripts check length, loudness, audio sync and page counts, and render previews.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="wrap about">
+    <div class="about-photo reveal">
+      <picture>
+        <source srcset="assets/photo.webp" type="image/webp">
+        <img src="assets/photo.jpg" width="640" height="640" alt="Portrait of Carl Owen E. Belen" loading="lazy">
+      </picture>
+    </div>
+    <div class="about-text reveal">
+      <p class="eyebrow">About</p>
+      <h2>Hi, I'm Owen.</h2>
+      <p>I'm a College Instructor at the University of Eastern Pangasinan, where I teach Web Development and Security with Claude, Gemini and NotebookLM built into the lessons. I've been coding since 2015. These days I build AI tools with Claude Code: agents, automations and media pipelines that take busywork off my plate and my clients' plates.</p>
+      <p>Teaching changed how I build. When you have to walk a room of students through your work, you stop hiding behind clever tricks. I write tools I'd happily put on a slide.</p>
+      <p>Outside work, I'm taking my Master in Information Technology (Cybersecurity), I trade the markets with my own bots, and I keep company with my dog Ginger and my cats Pepper and Tabby.</p>
+    </div>
+  </div>
+
+  <div class="wrap two">
+    <div class="reveal">
+      <h3 class="mini">Experience</h3>
+      <ul class="timeline">
+        <li><time>2025 – Now</time><b>College Instructor (IT)</b><span>University of Eastern Pangasinan</span></li>
+        <li><time>2022 – Now</time><b>AI &amp; Web Specialist</b><span>Freelance · Remote</span></li>
+        <li><time>2020 – 2021</time><b>Inventory &amp; Expenses Associate</b><span>Jhonever Metal Corporation</span></li>
+        <li><time>2019</time><b>IT Support Team Leader</b><span>Bonsai Liga</span></li>
+      </ul>
+    </div>
+    <div class="reveal">
+      <h3 class="mini">Education &amp; certifications</h3>
+      <ul class="timeline">
+        <li><time>2025 – Now</time><b>Master in IT, Cybersecurity</b><span>University of Luzon · in progress</span></li>
+        <li><time>2015 – 2019</time><b>BS Information Technology</b><span>University of Eastern Pangasinan</span></li>
+        <li><time>2026</time><b>Civil Service Exam, Professional Level</b><span>Passer</span></li>
+        <li><time>2017 – 2018</time><b>TESDA NC II &amp; NC III</b><span>Computer Systems Servicing · Visual Graphic Design</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <h3 class="mini reveal">How I work</h3>
+    <div class="values">
+      <div class="reveal"><span>01</span><h4>Build it, don't just talk about it</h4><p>Putting something real in front of people is the fastest way to find out if it works.</p></div>
+      <div class="reveal"><span>02</span><h4>Write code other people can read</h4><p>Clear names, simple structure, and notes where the reason isn't obvious.</p></div>
+      <div class="reveal"><span>03</span><h4>Keep it safe from the start</h4><p>Security goes in on day one: safe defaults, clear access limits and no secrets in code.</p></div>
+      <div class="reveal"><span>04</span><h4>Write things down</h4><p>How it works and why I chose it, so whoever comes next isn't starting from scratch.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- STACK -->
+<section class="section alt" id="stack">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="eyebrow">Tech stack</p>
+      <h2>What I work with</h2>
+    </div>
+    <div class="stack">
+      <div class="reveal"><h3 class="mini">AI &amp; agents</h3><ul class="chips big"><li>Claude</li><li>Claude Code</li><li>MCP</li><li>Gemini</li><li>NotebookLM</li><li>Whisper</li><li>PyTorch</li><li>Hugging Face</li><li>ONNX</li></ul></div>
+      <div class="reveal"><h3 class="mini">Languages</h3><ul class="chips big"><li>Python</li><li>JavaScript</li><li>HTML</li><li>CSS</li><li>MQL5</li><li>Pine Script</li></ul></div>
+      <div class="reveal"><h3 class="mini">Media &amp; automation</h3><ul class="chips big"><li>FFmpeg</li><li>HyperFrames</li><li>OpenCV</li><li>PyMuPDF</li><li>Playwright</li><li>Chrome Extensions</li><li>Zapier</li></ul></div>
+      <div class="reveal"><h3 class="mini">Data &amp; tools</h3><ul class="chips big"><li>NumPy</li><li>pandas</li><li>SciPy</li><li>SQLite</li><li>NVIDIA CUDA</li><li>Git</li><li>GitHub</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact" id="contact">
+  <div class="wrap contact-in reveal">
+    <p class="eyebrow">Contact</p>
+    <h2>Let's build something.</h2>
+    <p class="sub">I'm open to remote roles in AI engineering, AI automation and AI video editing, and to client builds. Email is the fastest way to reach me.</p>
+    <div class="cta center">
+      <a class="btn primary" id="mail" href="mailto:carlowen.belen@gmail.com">carlowen.belen@gmail.com</a>
+      <button class="btn ghost" id="copy" type="button">Copy email</button>
+      <a class="btn ghost" href="https://github.com/carlowenbelen" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+    <p class="where">Pangasinan, Philippines · UTC+8 · remote-friendly</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <span>© <span id="yr">2026</span> Carl Owen E. Belen</span>
+    <span>Built with Claude Code · Hosted free on GitHub Pages</span>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
