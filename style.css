@@ -232,9 +232,12 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 700; letter-spacing: 
   .status { display: none; }
   .hero { min-height: 0; padding: 120px 16px 64px; }
   .hero h1 { font-size: clamp(38px, 11.4vw, 60px); }
-  .stats { grid-template-columns: 1fr 1fr; }
-  .stats div { border-left: 0; padding: 0; }
-  .stats div:nth-child(5) { grid-column: 1 / -1; }
+  /* phones: one stat per row, number left and label right, thin lines between */
+  .stats { grid-template-columns: 1fr; row-gap: 0; margin-top: 56px; }
+  .stats div, .stats div:first-child, .stats div:nth-child(4) { display: grid; grid-template-columns: 104px 1fr; align-items: center; gap: 16px; padding: 16px 0; border-left: 0; border-top: 1px solid var(--line); }
+  .stats div:first-child { border-top: 0; }
+  .stats b { font-size: 36px; }
+  .stats span { margin-top: 0; font-size: 15px; }
   .section { padding-top: 100px; }
   .flagship { padding: 20px; }
   .term-body { font-size: 11.4px; padding: 16px; min-height: 226px; white-space: pre; overflow-x: auto; }
