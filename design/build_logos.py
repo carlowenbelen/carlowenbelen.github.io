@@ -1,8 +1,4 @@
-"""Rebuild the one-line logo strip in index.html (run from the site folder: python design/build_logos.py).
-
-Wordmark SVGs live in assets/logos (from svgl.app and the CC0 SVG Logos set); symbols come from
-Simple Icons (CC0 data). Brand logos remain trademarks of their owners.
-"""
+"""Build the one-line logo strip for the portfolio site (run from the site folder)."""
 import os
 import re
 import urllib.request
@@ -36,9 +32,17 @@ H = {"claude": 26, "openai": 26, "gemini": 26, "grok": 28, "perplexity": 28, "de
      "ffmpeg": 24, "zapier": 24, "n8n": 22, "github": 20, "nvidia": 20}
 
 
+VB_RE = re.compile(r'viewBox="[\d.\-]+[ ,]+[\d.\-]+[ ,]+([\d.]+)[ ,]+([\d.]+)"')
+
+
 def wm(slug, name):
-    """Real wordmark image."""
-    return f'<span class="tool"><img src="assets/logos/{slug}.svg" alt="{name}" style="height:{H[slug]}px" loading="lazy"></span>'
+    """Real wordmark image, its width fixed up front so the strip never jumps while logos load."""
+    svg = open(os.path.join(L, slug + ".svg"), encoding="utf-8").read()
+    vw, vh = map(float, VB_RE.search(svg).groups())
+    h = H[slug]
+    w = round(h * vw / vh)
+    return (f'<span class="tool"><img src="assets/logos/{slug}.svg" alt="{name}" '
+            f'width="{w}" height="{h}" style="width:{w}px;height:{h}px"></span>')
 
 
 def sym(slug, name):
@@ -58,8 +62,11 @@ items = [wm("claude", "Claude"), wm("openai", "OpenAI"), wm("gemini", "Gemini"),
          tile("Pr", "Premiere Pro"), tile("Ae", "After Effects"), tile("Ps", "Photoshop"), tile("Ai", "Illustrator"),
          sym("davinciresolve", "DaVinci Resolve"), tile("Cc", "CapCut"), tile("Ca", "Canva"), wm("zapier", "Zapier"),
          sym("make", "Make"), wm("n8n", "n8n"), sym("notion", "Notion"), wm("github", "GitHub"), wm("nvidia", "NVIDIA")]
-block = ('<div class="marquee" aria-label="Tools I use">\n  <div class="track logos" data-dup>\n    '
-         + "\n    ".join(items) + "\n  </div>\n</div>")
+# Two identical halves written straight into the HTML (the loop slides exactly one half);
+# the second half is hidden from screen readers.
+copies = [i.replace('<span class="tool">', '<span class="tool" aria-hidden="true">', 1) for i in items]
+block = ('<div class="marquee" aria-label="Tools I use">\n  <div class="track logos">\n    '
+         + "\n    ".join(items + copies) + "\n  </div>\n</div>")
 p = "index.html"
 s = open(p, encoding="utf-8").read()
 s, n = re.subn(r'<div class="marquee".*?\n</div>\n', lambda m: block + "\n", s, count=1, flags=re.S)

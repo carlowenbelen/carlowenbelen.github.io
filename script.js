@@ -28,15 +28,6 @@
     Object.keys(owner).forEach((id) => spy.observe(document.getElementById(id)));
   }
 
-  // Marquee: repeat each row once so the loop is seamless
-  document.querySelectorAll(".track[data-dup]").forEach((t) => {
-    [...t.children].forEach((c) => {
-      const copy = c.cloneNode(true);
-      copy.setAttribute("aria-hidden", "true");
-      t.appendChild(copy);
-    });
-  });
-
   // Big headings: reveal word by word
   document.querySelectorAll(".sec-head h2, .about-text h2, .contact h2").forEach((h) => {
     h.classList.add("words");
