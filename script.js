@@ -28,6 +28,61 @@
     Object.keys(owner).forEach((id) => spy.observe(document.getElementById(id)));
   }
 
+  // Scroll progress line under the header
+  const bar = document.querySelector(".progress");
+  const onProgress = () => {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.transform = `scaleX(${max > 0 ? Math.min(1, window.scrollY / max) : 0})`;
+  };
+  window.addEventListener("scroll", onProgress, { passive: true });
+  onProgress();
+
+  // Marquee: repeat each row once so the loop is seamless
+  document.querySelectorAll(".track[data-dup]").forEach((t) => {
+    [...t.children].forEach((c) => {
+      const copy = c.cloneNode(true);
+      copy.setAttribute("aria-hidden", "true");
+      t.appendChild(copy);
+    });
+  });
+
+  // Big headings: reveal word by word
+  document.querySelectorAll(".sec-head h2, .about-text h2, .contact h2").forEach((h) => {
+    h.classList.add("words");
+    h.innerHTML = h.textContent.trim().split(/\s+/)
+      .map((w, i) => `<span class="wd" style="--i:${i}">${w}</span>`).join(" ");
+  });
+
+  // Flagship card: soft spotlight follows the mouse
+  const flag = document.querySelector(".flagship");
+  flag.addEventListener("pointermove", (e) => {
+    const r = flag.getBoundingClientRect();
+    flag.style.setProperty("--mx", `${e.clientX - r.left}px`);
+    flag.style.setProperty("--my", `${e.clientY - r.top}px`);
+  });
+
+  // Stats: count up when they scroll into view
+  const nums = document.querySelectorAll(".stats b[data-to]");
+  if (!reduce && "IntersectionObserver" in window) {
+    const count = (el) => {
+      const to = +el.dataset.to, pre = el.dataset.pre || "", suf = el.dataset.suf || "";
+      const t0 = performance.now(), dur = 1300;
+      const step = (now) => {
+        const p = Math.min(1, (now - t0) / dur);
+        el.textContent = pre + Math.round(to * (1 - Math.pow(1 - p, 3))) + suf;
+        if (p < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    };
+    const so = new IntersectionObserver((entries) => entries.forEach((e) => {
+      if (e.isIntersecting) { count(e.target); so.unobserve(e.target); }
+    }), { threshold: .6 });
+    nums.forEach((n) => {
+      n.textContent = (n.dataset.pre || "") + "0" + (n.dataset.suf || "");
+      so.observe(n);
+    });
+  }
+
   // Reveal on scroll
   const items = document.querySelectorAll(".reveal");
   if (reduce || !("IntersectionObserver" in window)) {
