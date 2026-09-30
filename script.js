@@ -46,6 +46,21 @@
     items.forEach((el) => io.observe(el));
   }
 
+  // Headline: "A" stays put, the word after it rotates
+  const words = [...document.querySelectorAll(".rot .w")];
+  if (words.length > 1 && !reduce) {
+    let i = 0;
+    setInterval(() => {
+      const cur = words[i];
+      i = (i + 1) % words.length;
+      const next = words[i];
+      cur.classList.replace("on", "out");
+      next.classList.remove("out");
+      next.classList.add("on");
+      setTimeout(() => cur.classList.remove("out"), 800);
+    }, 2600);
+  }
+
   // Terminal: types a real run of my video pipeline
   const lines = [
     ["p", "$ ", "k", "ve make interview.mp4 --vertical"],
