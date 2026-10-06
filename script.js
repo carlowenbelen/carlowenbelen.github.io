@@ -15,7 +15,7 @@
   const links = [...document.querySelectorAll(".pills a")];
   if ("IntersectionObserver" in window) {
     // section id -> nav link it belongs to ("How I build" sits under Work, "Tech stack" under About)
-    const owner = { hero: "", work: "work", build: "work", about: "about", stack: "about", contact: "contact" };
+    const owner = { hero: "", reel: "reel", work: "work", build: "work", about: "about", stack: "about", contact: "contact" };
     const spy = new IntersectionObserver(
       (entries) =>
         entries.forEach((e) => {
@@ -41,6 +41,18 @@
     const r = flag.getBoundingClientRect();
     flag.style.setProperty("--mx", `${e.clientX - r.left}px`);
     flag.style.setProperty("--my", `${e.clientY - r.top}px`);
+  });
+
+  // Motion work: click the poster to play with sound; only one film plays at a time
+  const vids = [...document.querySelectorAll(".vid")];
+  vids.forEach((box) => {
+    const v = box.querySelector("video");
+    box.querySelector(".play").addEventListener("click", () => {
+      vids.forEach((o) => { if (o !== box) o.querySelector("video").pause(); });
+      box.classList.add("playing");
+      v.controls = true;
+      v.play();
+    });
   });
 
   // Stats: count up when they scroll into view
