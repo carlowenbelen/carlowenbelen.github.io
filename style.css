@@ -223,9 +223,6 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 700; letter-spacing: 
 .clip h3 { font-family: var(--display); font-size: 28px; line-height: 1.15; letter-spacing: -.02em; margin-top: 10px; }
 .clip figcaption p:not(.label):not(.tags) { margin-top: 10px; color: var(--muted); font-size: 16px; }
 .clip .tags { margin-top: 16px; }
-.clip.feature { margin-bottom: 28px; }
-.clip.feature figcaption { padding: 30px 34px 36px; }
-.clip.feature h3 { font-size: 34px; }
 .reel.three { grid-template-columns: repeat(3, 1fr); }
 .reel.three .clip h3 { font-size: 24px; }
 .tall-row { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 28px; align-items: center; margin-top: 28px; }
