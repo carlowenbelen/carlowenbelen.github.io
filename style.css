@@ -235,6 +235,8 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 700; letter-spacing: 
 .tall-row.four .phone { max-width: 260px; }
 .long-row { display: grid; grid-template-columns: 1.8fr 1fr; gap: 36px; align-items: center; margin-top: 56px; }
 .tall-row.solo { grid-template-columns: 2.2fr 1fr; margin-top: 56px; }
+.sec-head + .long-row { margin-top: 0; }
+#reel .reel.three { margin-top: 56px; }
 .reel-note { margin-top: 24px; font-size: 14px; color: var(--dim); }
 @media (max-width: 900px) { .reel, .reel.three, .long-row { grid-template-columns: 1fr; } .tall-row { grid-template-columns: 1fr 1fr; } .tall-text { grid-column: 1 / -1; } .tall-row.four { grid-template-columns: 1fr 1fr; } .tall-row.four .phone:last-child, .tall-row.solo .phone { grid-column: 1 / -1; } .clip figcaption { padding: 22px 22px 26px; } .vid .play span { width: 68px; height: 68px; } }
 
