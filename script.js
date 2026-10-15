@@ -95,7 +95,7 @@
     items.forEach((el) => io.observe(el));
   }
 
-  // Headline: "A" stays put, the word after it rotates
+  // Headline: the title under "Hi. I'm Owén." rotates
   const words = [...document.querySelectorAll(".rot .w")];
   if (words.length > 1 && !reduce) {
     let i = 0;
