@@ -95,6 +95,12 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 700; letter-spacing: 
 .stats b { display: block; font: 700 clamp(34px, 3.4vw, 46px)/1 var(--display-lg); letter-spacing: -.03em; }
 .stats span { display: block; margin-top: 10px; font-size: 14.5px; line-height: 1.45; color: var(--muted); }
 @media (min-width: 1101px) { .stats span { white-space: nowrap; } }
+/* "What I do": the same strip, with service names instead of numbers */
+.svc-label { margin-top: 80px; }
+.stats.services { margin-top: 20px; }
+.services b { font: 700 clamp(17px, 1.4vw, 20px)/1.2 var(--display); letter-spacing: -.02em; }
+.services span { margin-top: 8px; }
+@media (min-width: 1101px) { .services b { white-space: nowrap; } .services span { white-space: normal; } }
 
 /* ---------- sections ---------- */
 .section { padding: 140px 0 0; }
@@ -274,6 +280,10 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 700; letter-spacing: 
   .stats div:first-child { border-top: 0; }
   .stats b { font-size: 36px; }
   .stats span { margin-top: 0; font-size: 15px; }
+  .svc-label { margin-top: 56px; }
+  .stats.services { margin-top: 8px; }
+  .services div, .services div:first-child, .services div:nth-child(4) { grid-template-columns: 1fr; gap: 2px; }
+  .services b { font-size: 20px; }
   .section { padding-top: 100px; }
   .flagship { padding: 20px; }
   .term-body { font-size: 11.4px; padding: 16px; min-height: 226px; white-space: pre; overflow-x: auto; }
