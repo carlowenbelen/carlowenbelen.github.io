@@ -170,3 +170,15 @@
     setTimeout(() => (copy.textContent = "Copy email"), 2200);
   });
 })();
+
+// Direct links to one video (#rizal, #talking-head): jump again after fonts and images settle,
+// so late layout changes above the video don't push it out of view.
+window.addEventListener("load", () => {
+  const id = decodeURIComponent(location.hash.slice(1));
+  const el = id && document.getElementById(id);
+  if (!el) return;
+  const go = () => el.scrollIntoView({ behavior: "instant", block: "start" });
+  go();
+  setTimeout(go, 500);
+  setTimeout(go, 1500);
+});
