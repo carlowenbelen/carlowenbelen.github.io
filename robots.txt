@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /samples/
 
 Sitemap: https://carlowenbelen.github.io/sitemap.xml
